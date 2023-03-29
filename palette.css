@@ -1,0 +1,33 @@
+:root {
+    /* Primary */
+    --introEmailBGDarkBlue: hsl(217, 28%, 15%);
+    --mainBGDarkBlue: hsl(218, 28%, 13%);
+    --footerBGDarkBlue: hsl(216, 53%, 9%);
+    --testimonialsBGDarkBlue: hsl(219%, 30%, 18%);
+    /* Accent */
+    --c2aGradCyan: hsl(176, 68%, 64%);
+    --c2aGradBlue: hsl(198, 60%, 50%);
+    --errorLiteRed: hsl(0, 100%, 63%);
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    /* Typo: Body Copy */
+    --fontSize: 14px;
+    /* Headings, C2A, Header Navigation */
+    --fontRaleway: 'Raleway', sans-serif;
+    --fontOpenSans: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--mainBGDarkBlue);
+    color: var(--white);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
