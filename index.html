@@ -10,88 +10,90 @@
   <link rel="stylesheet" href="./palette.css">
   <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
 </head>
-<body>
-  <header>
+<body class="grid">
+  <header class="grid width100">
     <img class="main-logo" src="./images/logo.svg" alt="Fylo Logo">
-    <nav>
-      <a href="#">Features</a>
-      <a href="#">Team</a>
-      <a href="#">Sign In</a>
+    <nav class="header-nav">
+      <ul class="flex">
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Sign In</a></li>
     </nav>
   </header>
-  <main>
-    <section class="hero">
+  <main class="grid width100">
+    <section class="hero grid">
       <img class="hero-img" src="./images/illustration-intro.png" alt="People Holding Files">
       <h2>All your files in one secure location, accessible anywhere.</h2>
       <p>Fyle stores all your most important files in one secure location. Access them wherever you need, sheare and collaborate with friends, family, and co-workers.</p>
       <a href="#" class="get-started">Get Started</a>
     </section>
-    <section class="main-content">
-      <div class="access-anywhere">
-        <img class="content-logo" src="./images/icon-access-anywhere.svg" alt="Computer and Mobile icon">
+    <section class="main-content grid">
+      <div class="access-anywhere grid">
+        <img class="content-logo accessLogo" src="./images/icon-access-anywhere.svg" alt="Computer and Mobile icon">
         <h3>Access your files, anywhere</h3>
         <p>The ability to use a smartphone, tablet, or computer to access your account means your files follow you everywhere.</p>
       </div>
-      <div class="security">
-        <img class="content-logo" src="./images/icon-security.svg" alt="Security icon">
+      <div class="security grid">
+        <img class="content-logo securityLogo" src="./images/icon-security.svg" alt="Security icon">
         <h3>Security you can trust</h3>
         <p>2-factor authentication you and user-controlled encryption are just a couple of the security features we allow to help secure your files.</p>
       </div>
-      <div class="collaboration">
-        <img class="content-logo" src="./images/icon-collaboration.svg" alt="Collaboration logo">
+      <div class="collaboration grid">
+        <img class="content-logo collabLogo" src="./images/icon-collaboration.svg" alt="Collaboration logo">
         <h3>Real-time collaboration</h3>
         <p>Securelyl share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
       </div>
-      <div class="any-file">
-        <img class="content-logo" src="./images/icon-any-file.svg" alt="File types">
+      <div class="any-file grid">
+        <img class="content-logo anyFileLogo" src="./images/icon-any-file.svg" alt="File types">
         <h3>Store any type of file</h3>
         <p>Whether you're sharing holidays photos or work documents, Fylo has you coverted allowing for all file types to be securely stored and shared.</p>
       </div>
     </section>
-    <section class="stay-productive">
+    <section class="stay-productive grid">
+      <img class="productive-img" src="./images/illustration-stay-productive.png" alt="Productivity">
       <h3>Stay productive, wherever you are</h3>
-      <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
-      <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
-      <a href="#">See how Fylo works <span><img src="./images/icon-arrow.svg"></span></a>
+      <p class="productive-txt1">Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
+      <p class="productive-txt2">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
+      <a href="#" class="checkFylo">See how Fylo works <span><img src="./images/icon-arrow.svg"></span></a>
     </section>
-    <section class="profile-section">
-      <article class="profile profile1">
+    <section class="profile-section grid">
+      <article class="profile profile1 grid">
         <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
-        <img src="./images/profile-1.jpg" alt="Satish Patel">
+        <img class="profile1-img" src="./images/profile-1.jpg" alt="Satish Patel">
         <h4>Satish Patel</h4>
         <h5>Founder & CEO, Huddle</h5>
       </article>
-      <article class="profile profile2">
+      <article class="profile profile2 grid">
         <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
-        <img src="./images/profile-2.jpg" alt="Bruce McKenzie">
+        <img class="profile2-img" src="./images/profile-2.jpg" alt="Bruce McKenzie">
         <h4>Bruce McKenzie</h4>
         <h5>Founder & CEO, Huddle</h5>
       </article>
-      <article class="profile profile3">
+      <article class="profile profile3 grid">
         <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
-        <img src="./images/profile-3.jpg" alt="Iva Boyd">
+        <img class="profile3-img" src="./images/profile-3.jpg" alt="Iva Boyd">
         <h4>Iva Boyd</h4>
         <h5>Founder & CEO, Huddle</h5>
       </article>
     </section>
-    <section class="early-access">
+    <section class="early-access grid">
       <h3>Get early access today</h3>
       <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
-      <form name="fyloApplicant">
-        <input type="email" name="fyloEmail">
-        <input type="submit" value="Get Started For Free">
+      <form class="grid" id="fyloApplicant" name="fyloApplicant">
+        <input type="email" id="fyloEmail" name="fyloEmail" placeholder="email@example.com">
+        <input type="submit" id="fyloApplicantSub" value="Get Started For Free">
         <span id="emailInvalid">Please enter a valid email address</span>
       </form>
     </section>
   </main>
-  <footer>
-    <img src="./images/logo.svg" alt="Fylo logo" class="footer-logo">
-    <address>
+  <footer class="grid">
+    <img class="footer-logo" src="./images/logo.svg" alt="Fylo logo">
+    <address class="grid">
       <span class="fylo-address"><img src="./images/icon-location.svg" class="location-icon" alt="Location icon">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
       <span class="fylo-telephone"><img src="./images/icon-phone.svg" class="phone-icon" alt="Telephone icon"><a href="tel:+15431234567">+1-543-123-4567</a></span>
-      <span class="fylo-email"><img src="./images/icon-email.svg" class="email-icon" alt="Email icon"><a href="mailto:example@fylo.com"></a></span>
+      <span class="fylo-email"><img src="./images/icon-email.svg" class="email-icon" alt="Email icon"><a href="mailto:example@fylo.com">example@fylo.com</a></span>
     </address>
-    <nav>
+    <nav class="grid footer-nav">
       <ul>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Jobs</a></li>
@@ -102,7 +104,7 @@
         <li><a href="#">Privacy</a></li>
       </ul>
     </nav>
-    <div class="social-media">
+    <div class="social-media grid">
       <span class="facebook"><img src="./images/facebook-f.svg" class="ftr-facebook-logo" alt="Facebook logo"></span>
       <span class="twitter"><img src="./images/twitter.svg" class="ftr-twitter-logo" alt="Twitter logo"></span>
       <span class="instagram"><img src="./images/instagram.svg" class="ftr-instagram-logo" alt="Instagram logo"></span>
