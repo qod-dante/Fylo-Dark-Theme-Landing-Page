@@ -1,9 +1,9 @@
 :root {
     /* Primary */
-    --introEmailBGDarkBlue: hsl(217, 28%, 15%);
+    --intro_EmailBGDarkBlue: hsl(217, 28%, 15%);
     --mainBGDarkBlue: hsl(218, 28%, 13%);
     --footerBGDarkBlue: hsl(216, 53%, 9%);
-    --testimonialsBGDarkBlue: hsl(219%, 30%, 18%);
+    --testimonialsBGDarkBlue: hsl(219, 30%, 18%);
     /* Accent */
     --c2aGradCyan: hsl(176, 68%, 64%);
     --c2aGradBlue: hsl(198, 60%, 50%);
@@ -11,7 +11,7 @@
     /* Neutral */
     --white: hsl(0, 0%, 100%);
     /* Typo: Body Copy */
-    --fontSize: 14px;
+    --pFontSize: 14px;
     /* Headings, C2A, Header Navigation */
     --fontRaleway: 'Raleway', sans-serif;
     --fontOpenSans: 'Open Sans', sans-serif;
@@ -31,11 +31,21 @@
 .flex { display: flex; }
 .width100 { width: 100%; }
 
+.c2abtn {
+    display: inline-block;
+    padding: 1rem 6rem;
+    color: var(--white);
+    background-image: linear-gradient(to right bottom, var(--c2aGradCyan), var(--c2aGradBlue));
+    border: 1px solid inherit;
+    border-radius: 50px;
+    font-size: 1.5rem;
+}
+
 /* Mobile View Start */
 
 html {
-    background-color: var(--mainBGDarkBlue);
     color: var(--white);
+    background-color: var(--intro_EmailBGDarkBlue);
 }
 
 body {
@@ -43,24 +53,38 @@ body {
     'header'
     'main'
     'footer';
+    grid-template-columns: 100%;
     min-width: 375px;
 }
 
 header {
     grid-area: header;
     grid-template-areas:
-    'main-logo header-nav';
-    grid-template-columns: 2fr 3fr;
+    'main-logo hamburger';
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: max-content;
-    justify-content: space-between;
+    padding: 2rem 1rem 0;
+    width: 100%;
 }
 
 .main-logo {
     grid-area: main-logo;
 }
 
-.header-nav {
-    grid-area: header-nav;
+#hamburger {
+    grid-area: hamburger;
+    width: 40px;
+    height: 40px;
+    justify-self: end;
+}
+
+.mobile-nav-container {
+    display: none;
+}
+
+.desktop-nav-container {
+    /* grid-area: header-nav; */
+    display: none;
 }
 
 .header-nav ul {
@@ -78,6 +102,7 @@ main {
     'profile-section'
     'early-access';
     grid-template-rows: repeat(5, auto);
+    width: 100%;
 }
 
 .hero {
@@ -89,25 +114,70 @@ main {
     'get-started';
     justify-content: center;
     grid-template-rows: repeat(4, auto);
+    margin-top: 1.5rem;
 }
 
 .hero-img {
     grid-area: hero-img;
     width: 100%;
     height: 100%;
+    position: relative;
+    bottom: -40px;
 }
 
-.hero h2 { grid-area: hero-h2; }
-.hero p { grid-area: hero-p; }
-.get-started { grid-area: get-started; }
+.hero h2 {
+    grid-area: hero-h2;
+    font-size: 2.5rem;
+    padding: 2.5rem 1.5rem 0;
+    text-align: center;
+    background: url('./images/bg-curvy-mobile.svg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.hero p {
+    grid-area: hero-p;
+    background-color: var(--mainBGDarkBlue);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem 1.5rem 0;
+}
+
+.get-started {
+    grid-area: get-started;
+    background-color: var(--mainBGDarkBlue);
+    text-align: center;
+    padding-top: 2.5rem;
+}
 
 .main-content {
     grid-area: main-content;
     grid-template-areas:
-    'access-anywhere'
-    'security'
-    'collaboration'
-    'any-file';
+    'access-anywhere' /*83x78*/
+    'security' /*70x88*/
+    'collaboration' /*86x71*/
+    'any-file'; /*91x64*/
+    background-color: var(--mainBGDarkBlue);
+    padding: 5rem 2.5rem;
+}
+
+.main-content > div {
+    justify-items: center;
+    padding-bottom: 4rem;
+}
+
+.main-content > div > img {
+    padding-bottom: 3rem;
+}
+
+.main-content > div > h3 {
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.main-content > div > p {
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 .access-anywhere {
@@ -166,13 +236,50 @@ main {
     'productive-txt1'
     'productive-txt2'
     'checkFylo';
+    background-color: var(--mainBGDarkBlue);
 }
 
-.productive-img { grid-area: productive-img; width: 100%; height: 100%; }
-.stay-productive h3 { grid-area: productive-h3; }
+.stay-productive > *:not(img) {
+    padding: 0 2rem 2rem;
+}
+
+.productive-img {
+    grid-area: productive-img;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 4rem;
+}
+
+.stay-productive h3 {
+    grid-area: productive-h3;
+    font-size: 2rem;
+}
+
+.stay-productive p {
+    font-size: 1.5rem;
+}
+
 .productive-txt1 { grid-area: productive-txt1; }
 .productive-txt2 { grid-area: productive-txt2; }
-.checkFylo { grid-area: checkFylo; }
+
+.checkFylo {
+    grid-area: checkFylo;
+    color: var(--c2aGradCyan);
+}
+
+.checkFylo a {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--c2aGradCyan);
+    padding-bottom: 0.5rem;
+    display: inline-flex;
+    align-content:last baseline;
+}
+
+.checkFylo a img {
+    width: 30px;
+    height: 30px;
+    padding-left: 7px;
+}
 
 .profile-section {
     grid-area: profile-section;
@@ -180,15 +287,45 @@ main {
     'profile1'
     'profile2'
     'profile3';
+    background-color: var(--mainBGDarkBlue);
+}
+
+.profile {
+    background-color: var(--testimonialsBGDarkBlue);
+    margin: 1rem 2rem;
+    padding: 2.5rem 2rem;
+    grid-template-columns: min-content auto;
+    column-gap: 1rem;
+}
+
+.profile > img {
+    width: 55px;
+    height: 55px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
+.profile > p {
+    font-size: 1.2rem;
+    padding-bottom: 1.5rem;
+}
+
+.profile > h4 {
+    font-size: 1.3rem;
+    align-self: center;
+}
+
+.profile > h5 {
+    font-size: 0.9rem;
+    align-self: last baseline;
 }
 
 .profile1 {
     grid-area: profile1;
     grid-template-areas:
-    'profile1-p'
-    'profile1-img'
-    'profile1-h4'
-    'profile1-h5';
+    'profile1-p profile1-p'
+    'profile1-img profile1-h4'
+    'profile1-img profile1-h5';
 }
 
 .profile1 p { grid-area: profile1-p; }
@@ -199,10 +336,9 @@ main {
 .profile2 {
     grid-area: profile2;
     grid-template-areas:
-    'profile2-p'
-    'profile2-img'
-    'profile2-h4'
-    'profile2-h5';
+    'profile2-p profile2-p'
+    'profile2-img profile2-h4'
+    'profile2-img profile2-h5';
 }
 
 .profile2 p { grid-area: profile2-p; }
@@ -213,10 +349,9 @@ main {
 .profile3 {
     grid-area: profile3;
     grid-template-areas:
-    'profile3-p'
-    'profile3-img'
-    'profile3-h4'
-    'profile3-h5';
+    'profile3-p profile3-p'
+    'profile3-img profile3-h4'
+    'profile3-img profile3-h5';
 }
 
 .profile3 p { grid-area: profile3-p; }
@@ -226,14 +361,44 @@ main {
 
 .early-access {
     grid-area: early-access;
+    grid-template-areas: 'early-access__inner';
+    background-color: var(--mainBGDarkBlue);
+    width: 100%;
+}
+
+.early-access__inner {
+    grid-area: early-access__inner;
     grid-template-areas:
     'early-access-h3'
     'early-access-p'
     'fyloApplicant';
+    background-color: var(--intro_EmailBGDarkBlue);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 0 1rem;
+    align-self: center;
+    width: fit-content;
+    position: relative;
+    top: 40%;
 }
 
-.early-access h3 { grid-area: early-access-h3; }
-.early-access p { grid-area: early-access-p; }
+.early-access__inner > * {
+    margin: 0 1.5rem;
+}
+
+.early-access__inner h3 {
+    grid-area: early-access-h3;
+    text-align: center;
+    font-size: 1.75rem;
+    padding: 2.5rem 1.5rem 0;
+}
+
+.early-access__inner p {
+    grid-area: early-access-p;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
 
 #fyloApplicant {
     grid-area: fyloApplicant;
@@ -241,12 +406,35 @@ main {
     'fyloEmail'
     'fyloApplicantSub'
     'emailInvalid';
-    grid-template-rows: auto auto auto;
+    padding: 1.5rem;
 }
 
-#fyloEmail { grid-area: fyloEmail; }
-#fyloApplicantSub { grid-area: fyloApplicantSub; }
-#emailInvalid { grid-area: emailInvalid; }
+#fyloEmail {
+    grid-area: fyloEmail;
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    font-size: var(--pFontSize);
+}
+
+#fyloApplicantSub {
+    grid-area: fyloApplicantSub;
+    padding: 1rem 2rem;
+    color: var(--white);
+    background-image: linear-gradient(to right bottom, var(--c2aGradCyan), var(--c2aGradBlue));
+    border: 1px solid transparent;
+    border-radius: 50px;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#emailInvalid {
+    grid-area: emailInvalid;
+    color: var(--errorLiteRed);
+    padding: 0.5rem 1.5rem 0;
+    visibility: none;
+}
 
 footer {
     grid-area: footer;
@@ -256,31 +444,83 @@ footer {
     'footer-nav'
     'social-media'
     'attribution';
+    background-color: var(--footerBGDarkBlue);
+    width: 100%;
+    padding-top: 15rem;
 }
 
-.footer-logo { grid-area: footer-logo; }
+.footer-logo {
+    grid-area: footer-logo;
+    width: 70%;
+    height: 70%;
+    padding-left: 2.5rem;
+}
+
 address {
     grid-area: address;
     grid-template-areas:
-    'fylo-address'
-    'fylo-telephone'
-    'fylo-email';
+    'location-icon fylo-address'
+    'telephone-icon fylo-telephone'
+    'email-icon fylo-email';
+    gap: 1.25rem;
+    font-size: 1.5rem;
 }
 
+address img {
+    padding-left: 1.25rem;
+}
+
+.location-icon { grid-area: location-icon; }
 .fylo-address { grid-area: fylo-address; }
+.telephone-icon { grid-area: telephone-icon; }
 .fylo-telephone { grid-area: fylo-telephone; }
+.email-icon { grid-area: email-icon; }
 .fylo-email { grid-area: fylo-email; }
-.footer-nav { grid-area: footer-nav; }
+
+.footer-nav {
+    grid-area: footer-nav;
+    font-size: 1.75rem;
+    padding-top: 6rem;
+}
+
+.footer-nav ul {
+    flex-direction: column;
+    padding-left: 3rem;
+}
+
+.footer-nav ul li {
+    padding-bottom: 1rem;
+}
+
+.footer-nav ul li:nth-child(4) {
+    padding-bottom: 5rem;
+}
 
 .social-media {
     grid-area: social-media;
-    grid-template-areas:
-    'facebook twitter instagram';
+    grid-template-areas: 'facebook twitter instagram';
+    grid-template-rows: max-content;
+    justify-content: center;
+    column-gap: 1.25rem;
+    padding-top: 6rem;
 }
 
-.attribution { grid-area: attribution; font-size: 11px; text-align: center; }
+.social-media span {
+    border: 2px solid var(--white);
+    border-radius: 50%;
+}
+
+.social-media-logo {
+    width: 48px;
+    height: 48px;
+    padding: 0.75rem;
+}
+
+.attribution {
+    grid-area: attribution;
+    font-size: 11px;
+    text-align: center;
+    padding-top: 4rem;
+}
 .attribution a { color: hsl(228, 45%, 44%); }
 
-.ftr-facebook-logo { width: 16px; height: 16px; }
-.ftr-twitter-logo { width: 16px; height: 16px; }
-.ftr-instagram-logo { width: 16px; height: 16px; }

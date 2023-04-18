@@ -4,28 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet"> -->
   <link rel="stylesheet" href="./palette.css">
   <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
 </head>
 <body class="grid">
   <header class="grid width100">
     <img class="main-logo" src="./images/logo.svg" alt="Fylo Logo">
-    <nav class="header-nav">
-      <ul class="flex">
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Team</a></li>
-        <li><a href="#">Sign In</a></li>
-    </nav>
+    <img id="hamburger" src="./images/bars-solid.svg">
+    <div class="mobile-nav-container">
+      <img id="hamburger-close" src="./images/xmark-solid.svg">
+      <nav class="mobile-nav">
+        <ul class="flex">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Sign In</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="desktop-nav-container">
+      <nav class="header-nav">
+        <ul class="flex">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Sign In</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   <main class="grid width100">
     <section class="hero grid">
       <img class="hero-img" src="./images/illustration-intro.png" alt="People Holding Files">
       <h2>All your files in one secure location, accessible anywhere.</h2>
       <p>Fyle stores all your most important files in one secure location. Access them wherever you need, sheare and collaborate with friends, family, and co-workers.</p>
-      <a href="#" class="get-started">Get Started</a>
+      <div class="get-started">
+        <a href="#" class="get-started-btn c2abtn">Get Started</a>
+      </div>
     </section>
     <section class="main-content grid">
       <div class="access-anywhere grid">
@@ -54,7 +70,9 @@
       <h3>Stay productive, wherever you are</h3>
       <p class="productive-txt1">Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
       <p class="productive-txt2">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
-      <a href="#" class="checkFylo">See how Fylo works <span><img src="./images/icon-arrow.svg"></span></a>
+      <div class="checkFylo">
+        <a href="#">See how Fylo works <img src="./images/icon-arrow.svg"></a>
+      </div>
     </section>
     <section class="profile-section grid">
       <article class="profile profile1 grid">
@@ -77,24 +95,26 @@
       </article>
     </section>
     <section class="early-access grid">
-      <h3>Get early access today</h3>
-      <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
-      <form class="grid" id="fyloApplicant" name="fyloApplicant">
-        <input type="email" id="fyloEmail" name="fyloEmail" placeholder="email@example.com">
-        <input type="submit" id="fyloApplicantSub" value="Get Started For Free">
-        <span id="emailInvalid">Please enter a valid email address</span>
-      </form>
+      <div class="early-access__inner grid">
+        <h3>Get early access today</h3>
+        <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
+        <form class="grid" id="fyloApplicant" name="fyloApplicant">
+          <input type="email" id="fyloEmail" name="fyloEmail" placeholder="email@example.com">
+          <input type="submit" id="fyloApplicantSub" value="Get Started For Free">
+          <span id="emailInvalid">Please enter a valid email address</span>
+        </form>
+      </div>
     </section>
   </main>
   <footer class="grid">
     <img class="footer-logo" src="./images/logo.svg" alt="Fylo logo">
     <address class="grid">
-      <span class="fylo-address"><img src="./images/icon-location.svg" class="location-icon" alt="Location icon">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
-      <span class="fylo-telephone"><img src="./images/icon-phone.svg" class="phone-icon" alt="Telephone icon"><a href="tel:+15431234567">+1-543-123-4567</a></span>
-      <span class="fylo-email"><img src="./images/icon-email.svg" class="email-icon" alt="Email icon"><a href="mailto:example@fylo.com">example@fylo.com</a></span>
+      <img src="./images/icon-location.svg" class="location-icon" alt="Location icon"><span class="fylo-address">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
+      <img src="./images/icon-phone.svg" class="phone-icon" alt="Telephone icon"><span class="fylo-telephone"><a href="tel:+15431234567">+1-543-123-4567</a></span>
+      <img src="./images/icon-email.svg" class="email-icon" alt="Email icon"><span class="fylo-email"><a href="mailto:example@fylo.com">example@fylo.com</a></span>
     </address>
     <nav class="grid footer-nav">
-      <ul>
+      <ul class="flex">
         <li><a href="#">About Us</a></li>
         <li><a href="#">Jobs</a></li>
         <li><a href="#">Press</a></li>
@@ -105,9 +125,9 @@
       </ul>
     </nav>
     <div class="social-media grid">
-      <span class="facebook"><img src="./images/facebook-f.svg" class="ftr-facebook-logo" alt="Facebook logo"></span>
-      <span class="twitter"><img src="./images/twitter.svg" class="ftr-twitter-logo" alt="Twitter logo"></span>
-      <span class="instagram"><img src="./images/instagram.svg" class="ftr-instagram-logo" alt="Instagram logo"></span>
+      <span class="facebook"><img src="./images/facebook-f.svg" class="social-media-logo" alt="Facebook logo"></span>
+      <span class="twitter"><img src="./images/twitter.svg" class="social-media-logo" alt="Twitter logo"></span>
+      <span class="instagram"><img src="./images/instagram.svg" class="social-media-logo" alt="Instagram logo"></span>
     </div>
     <span class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
